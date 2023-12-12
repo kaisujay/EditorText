@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NgxEditorModule } from 'ngx-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     NgxEditorModule,
+    QuillModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],

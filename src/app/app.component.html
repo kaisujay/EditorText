@@ -1,24 +1,46 @@
-<div class="container">
-	<div class="content">
-		<div class="display">
-			<!-- <div class="logo">
-				<img src="../assets/ngx-editor.svg" />
-				<div class="subtitle">Rich Text Editor for angular using ProseMirror</div>
-			</div> -->
-		</div>
+<!-- <quill-editor 
+  class="content-editor" 
+  [placeholder]="''"
+  [styles]="{'min-height': '300px'}"
+> 
+</quill-editor> -->
 
-		<form [formGroup]="form">
-			<div class="editor">
-				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
-				</ngx-editor-menu>
-				<ngx-editor [editor]="editor" formControlName="editorContent">
-				</ngx-editor>
-			</div>
-		</form>
+<form [formGroup]="myForm">
+  <div>
+    <label>
+      Name:
+      <input formControlName="name" placeholder="Your name">
+    </label>
+  </div>
+  <div>
+    <label>
+      Email:
+      <input formControlName="email" placeholder="Your email">
+    </label>
+  </div>
+  <div>
+    <label>
+      Message:
+      <input formControlName="message" placeholder="Your message">
+    </label>
+  </div>
+  <div>
+    <quill-editor 
+      class="content-editor" 
+      [placeholder]="''" 
+      [styles]="{'min-height': '300px'}"
+      formControlName="textEditor"
+    >
+    </quill-editor>
+  </div>
+  <button type="submit" (click)="onSave()">Send</button>
+</form>
 
-		<div class="editor">
-      <ngx-editor [editor]="editor" [(ngModel)]="editordoc">
-      </ngx-editor>
-    </div>
-	</div>
-</div>
+<!-- With Optional "modules" -->
+<!-- <quill-editor
+  class="content-editor"
+  [placeholder]="''"
+  [modules]="quillConfiguration"
+  [styles]="{'min-height': '300px'}"
+>
+</quill-editor> -->
